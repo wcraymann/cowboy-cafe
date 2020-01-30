@@ -49,7 +49,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// True if pickles are included in the Trailburger
         /// </summary>
-        public bool Pickel { get; set; } = true;
+        public bool Pickle { get; set; } = true;
 
         /// <summary>
         /// True if cheese is included in the Trailburger
@@ -68,7 +68,7 @@ namespace CowboyCafe.Data
                 if (!Bun) specialInstructions.Add("hold bun");
                 if (!Ketchup) specialInstructions.Add("hold ketchup");
                 if (!Mustard) specialInstructions.Add("hold mustard");
-                if (!Pickel) specialInstructions.Add("hold pickel");
+                if (!Pickle) specialInstructions.Add("hold pickle");
                 if (!Cheese) specialInstructions.Add("hold cheese");
 
                 return specialInstructions;

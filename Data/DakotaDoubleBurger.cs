@@ -49,7 +49,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// True if pickles are included in the Dakota Double Burger
         /// </summary>
-        public bool Pickel { get; set; } = true;
+        public bool Pickle { get; set; } = true;
 
         /// <summary>
         /// True if cheese is included in the Dakota Double Burger
@@ -64,7 +64,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// True if lettus is included in the Dakota Double Burger
         /// </summary>
-        public bool Lettus { get; set; } = true;
+        public bool Lettuce { get; set; } = true;
 
         /// <summary>
         /// True if mayo is included in the Dakota Double Burger
@@ -83,10 +83,10 @@ namespace CowboyCafe.Data
                 if (!Bun) specialInstructions.Add("hold bun");
                 if (!Ketchup) specialInstructions.Add("hold ketchup");
                 if (!Mustard) specialInstructions.Add("hold mustard");
-                if (!Pickel) specialInstructions.Add("hold pickel");
+                if (!Pickle) specialInstructions.Add("hold pickle");
                 if (!Cheese) specialInstructions.Add("hold cheese");
                 if (!Tomato) specialInstructions.Add("hold tomato");
-                if (!Lettus) specialInstructions.Add("hold lettus");
+                if (!Lettuce) specialInstructions.Add("hold lettuce");
                 if (!Mayo) specialInstructions.Add("hold mayo");
 
                 return specialInstructions;
