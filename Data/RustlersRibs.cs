@@ -30,5 +30,16 @@ namespace CowboyCafe.Data
                 return 894;
             }
         }
+
+        /// <summary>
+        /// Stores special instructions for Rustler's Ribs
+        /// </summary>
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                return new List<string>();
+            }
+        }
     }
 }
