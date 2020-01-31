@@ -5,12 +5,12 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A class representing the Pecos Pulled Pork entree
+    /// A class representing the Pecos Pulled Pork entree.
     /// </summary>
     public class PecosPulledPork
     {
         /// <summary>
-        /// Stores price for Pecos Pulled Pork
+        /// Stores price for Pecos Pulled Pork.
         /// </summary>
         public double Price
         {
@@ -21,7 +21,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Stores calorie count for Pecos Pulled Pork
+        /// Stores calorie count for Pecos Pulled Pork.
         /// </summary>
         public uint Calories
         {
@@ -32,17 +32,17 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// True if bread is included in Pecos Pulled Pork
+        /// True if bread is included in Pecos Pulled Pork.
         /// </summary>
         public bool Bread { get; set; } = true;
 
         /// <summary>
-        /// True if pickles are included in Pecos Pulled Pork 
+        /// True if pickles are included in Pecos Pulled Pork.
         /// </summary>
         public bool Pickle { get; set; } = true;
 
         /// <summary>
-        /// Stores any special instructions for Pecos Pulled Pork
+        /// Stores any special instructions for Pecos Pulled Pork.
         /// </summary>
         public List<string> SpecialInstructions
         {

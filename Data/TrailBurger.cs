@@ -5,12 +5,12 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A class representing the Trailburger entree
+    /// A class representing the Trailburger entree.
     /// </summary>
     public class TrailBurger
     {
         /// <summary>
-        /// Stores the price of the Trailburger
+        /// Stores the price of the Trailburger.
         /// </summary>
         public double Price
         {
@@ -21,7 +21,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Stores the calorie count of the Trailburger
+        /// Stores the calorie count of the Trailburger.
         /// </summary>
         public uint Calories
         {
@@ -32,32 +32,32 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// True if a bun is included in the Trailburger
+        /// True if a bun is included in the Trailburger.
         /// </summary>
         public bool Bun { get; set; } = true;
 
         /// <summary>
-        /// True if ketchup is included in the Trailburger
+        /// True if ketchup is included in the Trailburger.
         /// </summary>
         public bool Ketchup { get; set; } = true;
 
         /// <summary>
-        /// True if mustard is included in the Trailburger
+        /// True if mustard is included in the Trailburger.
         /// </summary>
         public bool Mustard { get; set; } = true;
 
         /// <summary>
-        /// True if pickles are included in the Trailburger
+        /// True if pickles are included in the Trailburger.
         /// </summary>
         public bool Pickle { get; set; } = true;
 
         /// <summary>
-        /// True if cheese is included in the Trailburger
+        /// True if cheese is included in the Trailburger.
         /// </summary>
         public bool Cheese { get; set; } = true;
 
         /// <summary>
-        /// Stores special instructions for the Trailburger
+        /// Stores special instructions for the Trailburger.
         /// </summary>
         public List<string> SpecialInstructions
         {
