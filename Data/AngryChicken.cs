@@ -5,13 +5,13 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A class representing the angry chicken entree.
+    /// A class representing an angry chicken entree
     /// </summary>
     public class AngryChicken
     {
         private bool bread = true;
         /// <summary>
-        /// True if the AngryChicken is served with bread.
+        /// If the AngryChicken is served with bread
         /// </summary>
         public bool Bread
         {
@@ -20,12 +20,12 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// True if the AngryChicken is served with pickles.
+        /// If the angry chicken is served with a pickle
         /// </summary>
         public bool Pickle { get; set; } = true;
 
         /// <summary>
-        ///  Stores the price in the AngryChicken.
+        /// The price of the angry chicken
         /// </summary>
         public double Price
         {
@@ -33,7 +33,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Stores the calories in the AngryChicken.
+        /// The calories of the angry chicken
         /// </summary>
         public uint Calories
         {
@@ -41,16 +41,16 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Stores the special instructions for the AngryChicken.
+        /// The special instructions for preparing the angry chicken
         /// </summary>
         public List<string> SpecialInstructions
         {
             get
             {
-                var instructions = new List<string>();
+                List<string> instructions = new List<string>();
 
-                if(!Bread) instructions.Add("hold bread");
-                if(!Pickle) instructions.Add("hold pickle");
+                if(!bread) instructions.Add("hold bread");
+                if(!Pickle) instructions.Add("hold pickle"); 
 
                 return instructions;
             }
