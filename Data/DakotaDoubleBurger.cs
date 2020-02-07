@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: William Raymann.
+ * Class: DakotaDoubleBurber.
+ * Prupose: To store data on a particular Dakota Double Burger entree in the Cowboy Cafe.
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,12 +12,12 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing a Dakota Double Burger entree.
     /// </summary>
-    public class DakotaDoubleBurger
+    public class DakotaDoubleBurger : Entree
     {
         /// <summary>
         /// Stores the price of the Dakota Double Burger.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -23,7 +28,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Stores the calorie count of the Dakota Double Burger.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -74,7 +79,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Stores special instructions for the Dakota Double Burger.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

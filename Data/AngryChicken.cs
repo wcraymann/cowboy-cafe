@@ -1,17 +1,23 @@
-﻿using System;
+﻿/*
+ * Author: William Raymann.
+ * Class: AngryChicken.
+ * Prupose: To store data on a particular Angry Chicken entree in the Cowboy Cafe.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A class representing an angry chicken entree
+    /// A class representing an angry chicken entree.
     /// </summary>
-    public class AngryChicken
+    public class AngryChicken : Entree
     {
         private bool bread = true;
         /// <summary>
-        /// If the AngryChicken is served with bread
+        /// If the AngryChicken is served with bread.
         /// </summary>
         public bool Bread
         {
@@ -20,30 +26,30 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// If the angry chicken is served with a pickle
+        /// If the angry chicken is served with a pickle.
         /// </summary>
         public bool Pickle { get; set; } = true;
 
         /// <summary>
-        /// The price of the angry chicken
+        /// The price of the angry chicken.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 5.99; }
         }
 
         /// <summary>
-        /// The calories of the angry chicken
+        /// The calories of the angry chicken.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 190; }
         }
 
         /// <summary>
-        /// The special instructions for preparing the angry chicken
+        /// The special instructions for preparing the angry chicken.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

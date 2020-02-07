@@ -1,3 +1,8 @@
+/*
+ * Author: William Raymann.
+ * Class: RustlersRibs.
+ * Prupose: To store data on a particular Rustler's Ribs entree in the Cowboy Cafe.
+ */
 using System;
 using System.Collections.Generic;
 
@@ -6,13 +11,13 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Rustler's Ribs entree.
     /// </summary>
-    public class RustlersRibs
+    public class RustlersRibs : Entree
     {
 
         /// <summary>
         /// The price of Rustler's Ribs.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -23,7 +28,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of Rustler's Ribs.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -32,9 +37,9 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Stores special instructions for Rustler's Ribs
+        /// Stores special instructions for Rustler's Ribs.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

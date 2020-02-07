@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: William Raymann.
+ * Class: TrailBurger.
+ * Prupose: To store data on a particular Trail Burger entree in the Cowboy Cafe.
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,12 +12,12 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Trailburger entree.
     /// </summary>
-    public class TrailBurger
+    public class TrailBurger : Entree
     {
         /// <summary>
         /// Stores the price of the Trailburger.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -23,7 +28,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Stores the calorie count of the Trailburger.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -59,7 +64,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Stores special instructions for the Trailburger.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

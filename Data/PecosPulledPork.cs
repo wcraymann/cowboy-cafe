@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: William Raymann.
+ * Class: PecosPulledPork.
+ * Prupose: To store data on a particular Pecos Pulled Pork entree in the Cowboy Cafe.
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,12 +12,12 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Pecos Pulled Pork entree.
     /// </summary>
-    public class PecosPulledPork
+    public class PecosPulledPork : Entree
     {
         /// <summary>
         /// Stores price for Pecos Pulled Pork.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -23,7 +28,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Stores calorie count for Pecos Pulled Pork.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -44,7 +49,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Stores any special instructions for Pecos Pulled Pork.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

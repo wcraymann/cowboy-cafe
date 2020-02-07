@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Nathan Bean
+ * Class: Side
+ * Prupose: To be a base class for the sides in the Cowboy Cafe
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
