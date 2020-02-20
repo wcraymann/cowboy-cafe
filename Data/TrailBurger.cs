@@ -79,5 +79,14 @@ namespace CowboyCafe.Data
                 return specialInstructions;
             }
         }
+
+        /// <summary>
+        /// Converts the object to a string.
+        /// </summary>
+        /// <returns>The string "Trail Burger".</returns>
+        public override string ToString()
+        {
+            return "Trail Burger";
+        }
     }
 }

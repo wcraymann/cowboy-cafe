@@ -61,5 +61,23 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Converts the object to a string.
+        /// </summary>
+        /// <returns>The string "Chili Cheese Fries" preceded by either "Large", "Medium", or "Small".</returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case Size.Large:
+                    return "Large Chili Cheese Fries";
+                case Size.Medium:
+                    return "Medium Chili Cheese Fries";
+                case Size.Small:
+                    return "Small Chili Cheese Fries";
+                default:
+                    throw new NotImplementedException("Unknown Size");
+            }
+        }
     }
 }

@@ -84,5 +84,24 @@ namespace CowboyCafe.Data
                 return list;
             }
         }
+
+        /// <summary>
+        /// Converts the object to a string.
+        /// </summary>
+        /// <returns>The string "Texas Tea" preceded by either "Large", "Medium", or "Small".</returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case Size.Large:
+                    return "Large Texas Tea";
+                case Size.Medium:
+                    return "Medium Texas Tea";
+                case Size.Small:
+                    return "Small Texas Tea";
+                default:
+                    throw new NotImplementedException("Unknown Size");
+            }
+        }
     }
 }

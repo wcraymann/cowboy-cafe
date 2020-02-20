@@ -50,5 +50,24 @@ namespace CowboyCafe.Data
                 return list;
             }
         }
+
+        /// <summary>
+        /// Converts the object to a string.
+        /// </summary>
+        /// <returns>The string "Water" preceded by either "Large", "Medium", or "Small".</returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case Size.Large:
+                    return "Large Water";
+                case Size.Medium:
+                    return "Medium Water";
+                case Size.Small:
+                    return "Small Water";
+                default:
+                    throw new NotImplementedException("Unknown Size");
+            }
+        }
     }
 }

@@ -75,5 +75,50 @@ namespace CowboyCafe.Data
                 return list;
             }
         }
+
+        /// <summary>
+        /// Converts the object to a string.
+        /// </summary>
+        /// <returns>The string "Jerked Soda" preceded by either "Large", "Medium", or "Small"
+        /// and either "Cream", "Orange", "Sarsaparilla", "Birch Beer", or "Root Beer".</returns>
+        public override string ToString()
+        {
+            var returnString = "Jerked Soda";
+
+            // Add the soda flavor.
+            switch(Flavor)
+            {
+                case SodaFlavor.CreamSoda:
+                    returnString = returnString.Insert(0, "Cream ");
+                    break;
+                case SodaFlavor.OrangeSoda:
+                    returnString = returnString.Insert(0, "Orange ");
+                    break;
+                case SodaFlavor.Sarsaparilla:
+                    returnString = returnString.Insert(0, "Sarsaparilla ");
+                    break;
+                case SodaFlavor.BirchBeer:
+                    returnString = returnString.Insert(0, "Birch Beer ");
+                    break;
+                case SodaFlavor.RootBeer:
+                    returnString = returnString.Insert(0, "Root Beer ");
+                    break;
+                default:
+                    throw new NotImplementedException("Unknown Soda Flavor");
+            }
+
+            // Add the soda size and return the string.
+            switch (Size)
+            {
+                case Size.Large:
+                    return returnString.Insert(0, "Large ");
+                case Size.Medium:
+                    return returnString.Insert(0, "Medium ");
+                case Size.Small:
+                    return returnString.Insert(0, "Small ");
+                default:
+                    throw new NotImplementedException("Unknown Size");
+            }
+        }
     }
 }

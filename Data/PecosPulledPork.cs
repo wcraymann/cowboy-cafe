@@ -61,5 +61,14 @@ namespace CowboyCafe.Data
                 return specialInstructions;
             }
         }
+
+        /// <summary>
+        /// Converts the object to a string.
+        /// </summary>
+        /// <returns>The string "Pecos Pulled Pork".</returns>
+        public override string ToString()
+        {
+            return "Pecos Pulled Pork";
+        }
     }
 }

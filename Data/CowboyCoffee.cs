@@ -88,5 +88,29 @@ namespace CowboyCafe.Data
         {
             Ice = false;
         }
+
+        /// <summary>
+        /// Converts the object to a string.
+        /// </summary>
+        /// <returns>The string "Cowboy Coffee" preceded by either "Large", "Medium", or "Small" and "Decaf" if
+        /// the coffee is decaffeinated.</returns>
+        public override string ToString()
+        {
+            var returnString = "Cowboy Coffee";
+
+            if (Decaf) returnString = returnString.Insert(0, "Decaf ");
+
+            switch (Size)
+            {
+                case Size.Large:
+                    return returnString.Insert(0, "Large ");
+                case Size.Medium:
+                    return returnString.Insert(0, "Medium ");
+                case Size.Small:
+                    return returnString.Insert(0, "Small ");
+                default:
+                    throw new NotImplementedException("Unknown Size");
+            }
+        }
     }
 }
