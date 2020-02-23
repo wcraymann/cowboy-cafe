@@ -50,7 +50,7 @@
 
         <StackPanel Grid.Column="3">
             <TextBlock TextAlignment="Center">Order</TextBlock>
-            <ListBox Name="OrderList"/>
+            <ListBox Name="OrderList" Height="525"/>
         </StackPanel>
         
     </Grid>

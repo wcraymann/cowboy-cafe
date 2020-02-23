@@ -91,14 +91,19 @@ namespace CowboyCafe.Data
         /// <returns>The string "Texas Tea" preceded by either "Large", "Medium", or "Small".</returns>
         public override string ToString()
         {
+            var returnString = "Tea";
+
+            if (Sweet) returnString = returnString.Insert(0, "Sweet ");
+            else returnString = returnString.Insert(0, "Plain ");
+
             switch (Size)
             {
                 case Size.Large:
-                    return "Large Texas Tea";
+                    return returnString.Insert(0, "Large Texas ");
                 case Size.Medium:
-                    return "Medium Texas Tea";
+                    return returnString.Insert(0, "Medium Texas ");
                 case Size.Small:
-                    return "Small Texas Tea";
+                    return returnString.Insert(0, "Small Texas ");
                 default:
                     throw new NotImplementedException("Unknown Size");
             }

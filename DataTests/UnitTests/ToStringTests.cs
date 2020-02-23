@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
-/*
+
 namespace CowboyCafe.DataTests
 {
     public class ToStringTests
@@ -68,9 +68,9 @@ namespace CowboyCafe.DataTests
         [InlineData(SodaFlavor.RootBeer, Size.Small, "Small Root Beer Jerked Soda")]
         [InlineData(SodaFlavor.RootBeer, Size.Medium, "Medium Root Beer Jerked Soda")]
         [InlineData(SodaFlavor.RootBeer, Size.Large, "Large Root Beer Jerked Soda")]
-        [InlineData(SodaFlavor.Sarsparilla, Size.Small, "Small Sarsparilla Jerked Soda")]
-        [InlineData(SodaFlavor.Sarsparilla, Size.Medium, "Medium Sarsparilla Jerked Soda")]
-        [InlineData(SodaFlavor.Sarsparilla, Size.Large, "Large Sarsparilla Jerked Soda")]
+        [InlineData(SodaFlavor.Sarsaparilla, Size.Small, "Small Sarsaparilla Jerked Soda")]
+        [InlineData(SodaFlavor.Sarsaparilla, Size.Medium, "Medium Sarsaparilla Jerked Soda")]
+        [InlineData(SodaFlavor.Sarsaparilla, Size.Large, "Large Sarsaparilla Jerked Soda")]
         public void JerkedSodaToStringShouldMatchExpectations(SodaFlavor flavor, Size size, string expected)
         {
             var soda = new JerkedSoda
@@ -117,4 +117,4 @@ namespace CowboyCafe.DataTests
 
     }
 }
-*/
+

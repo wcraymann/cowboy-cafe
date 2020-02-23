@@ -89,10 +89,10 @@ namespace CowboyCafe.Data
             switch(Flavor)
             {
                 case SodaFlavor.CreamSoda:
-                    returnString = returnString.Insert(0, "Cream ");
+                    returnString = returnString.Insert(0, "Cream Soda ");
                     break;
                 case SodaFlavor.OrangeSoda:
-                    returnString = returnString.Insert(0, "Orange ");
+                    returnString = returnString.Insert(0, "Orange Soda ");
                     break;
                 case SodaFlavor.Sarsaparilla:
                     returnString = returnString.Insert(0, "Sarsaparilla ");
