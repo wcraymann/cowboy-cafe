@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Author: William Raymann.
+ * Class: MenuItemSelectionControl.xaml.
+ * Purpose: To display the order items with buttons and add them to 
+ *          the current order when their corresponding buttons are 
+ *          clicked.
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -25,153 +32,33 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Adds an Angry Chicken entree to the order.
+        /// Undefined for now.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AddAngryChickenButton_Click(object sender, RoutedEventArgs e)
+        private void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new AngryChicken());
+            // Undefined for now.
         }
 
         /// <summary>
-        /// Adds a Cowpoke Chili entree to the order.
+        /// Cancels the current order and creates a new order.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AddCowpokeChiliButton_Click(object sender, RoutedEventArgs e)
+        private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new CowpokeChili());
+            this.DataContext = new Order();
         }
 
         /// <summary>
-        /// Adds a Rustler's Ribs entree to the order.
+        /// Completes the current order and creates a new order.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AddRustlersRibsButton_Click(object sender, RoutedEventArgs e)
+        private void CompleteOrder_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.Items.Add(new RustlersRibs());
-        }
-
-        /// <summary>
-        /// Adds a Pecos Pulled Pork entree to the order.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddPecosPulledPorkButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new PecosPulledPork());
-        }
-
-        /// <summary>
-        /// Adds a Trail Burger entree to the order.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddTrailBurgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new TrailBurger());
-        }
-
-        /// <summary>
-        /// Adds a Dakota Double Burger entree to the order.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddDakotaDoubleBurgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new DakotaDoubleBurger());
-        }
-
-        /// <summary>
-        /// Adds a Texas Triple Burger entree to the order.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddTexasTripleBurgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new TexasTripleBurger());
-        }
-
-        /// <summary>
-        /// Adds an Chili Cheese Fries side to the order.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddChiliCheeseFriesButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new ChiliCheeseFries());
-        }
-
-        /// <summary>
-        /// Adds an Corn Dodgers side to the order.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddCornDodgersButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new CornDodgers());
-        }
-
-        /// <summary>
-        /// Adds an Pan De Campo side to the order.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddPanDeCampoButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new PanDeCampo());
-        }
-
-        /// <summary>
-        /// Adds an Baked Beans side to the order.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddBakedBeansButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new BakedBeans());
-        }
-
-        /// <summary>
-        /// Adds a Jerked Soda drink to the order.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddJerkedSodaButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new JerkedSoda());
-        }
-
-        /// <summary>
-        /// Adds a Texas Tea drink to the order.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddTexasTeaButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new TexasTea());
-        }
-
-        /// <summary>
-        /// Adds a Cowboy Coffee drink to the order.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddCowboyCoffeeButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new CowboyCoffee());
-        }
-
-        /// <summary>
-        /// Adds a Water drink to the order.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddWaterButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrderList.Items.Add(new Water());
+            this.DataContext = new Order();
         }
     }
 }

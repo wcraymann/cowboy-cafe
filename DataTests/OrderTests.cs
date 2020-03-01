@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Nathan Bean & William Raymann.
+ * Class: OrderTests.
+ * Purpose: To verify correct behavoir in CowboyCafe.Data.Order.
+ */ 
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
@@ -6,8 +11,14 @@ using CowboyCafe.Data;
 
 namespace CowboyCafe.DataTests
 {
+    /// <summary>
+    /// A collection of tests for CowboyCafe.Data.Order.
+    /// </summary>
     public class OrderTests
     {
+        /// <summary>
+        /// An order item to test the Order classes' Items property.
+        /// </summary>
         public class MockOrderItem : IOrderItem
         {
             public double Price { get; set; }
@@ -15,8 +26,10 @@ namespace CowboyCafe.DataTests
             public List<string> SpecialInstructions { get; set; } = new List<string>();
         }
 
+        /// <summary>
+        /// Tests the Order classes' ability to add new order items.
+        /// </summary>
         [Fact]
-        // Should be able to add items.
         public void ShouldBeAbleToAddItems()
         {
             var order = new Order();
@@ -27,7 +40,9 @@ namespace CowboyCafe.DataTests
         }
         
 
-        // Should be able to remove items.
+        /// <summary>
+        /// Tests the Order classes' ability to remove order items.
+        /// </summary>
         [Fact]
         public void ShouldBeAbleToRemoveItems()
         {
@@ -38,8 +53,11 @@ namespace CowboyCafe.DataTests
             Assert.DoesNotContain(item, order.Items);
         }
 
+        /// <summary>
+        /// Tests the Order classes' ability to return a enumeration of 
+        /// the items in the order represented by the Order class.
+        /// </summary>
         [Fact]
-        // Should be able to to get Getting enumeration of items.
         public void ShouldBeAbleToGetAnEnumerationOfItems()
         {
             var order = new Order();
@@ -57,6 +75,12 @@ namespace CowboyCafe.DataTests
                 item => Assert.Equal(item2, item));
         }
 
+        /// <summary>
+        /// Tests the Order classes' ability to accurately total up the 
+        /// sum of all the prices of its items and store that value in 
+        /// its Subtotal property.
+        /// </summary>
+        /// <param name="prices">The prices of the order items in the test.</param>
         [Theory]
         [InlineData(new double[] { 1, 2, 3 })]
         [InlineData(new double[] { 0, 0.3, 0 })]
@@ -67,7 +91,6 @@ namespace CowboyCafe.DataTests
         [InlineData(new double[] { -4, 10, 8 })]
         [InlineData(new double[] { 3.1345234262})]
         [InlineData(new double[] {  double.NaN })]
-        // Subtotal should be the sum of item prices.
         public void SubtotalShouldBeTheSumOfItemPrices(double[] prices)
         {
             var order = new Order();
@@ -84,14 +107,21 @@ namespace CowboyCafe.DataTests
             Assert.Equal(total, order.Subtotal);
         }
 
+        /// <summary>
+        /// Tests the Order classes' ability to trigger the PropertyChanged
+        /// event handler when either its Subtotal or Items property is changed
+        /// due to an item being added to the order represented by the Order class.
+        /// </summary>
+        /// <param name="propertyName">The property whose change should trigger
+        /// the PropertyChanged event handler.</param>
         [Theory]
-        [InlineData("Price")]
+        [InlineData("Subtotal")]
         [InlineData("Items")]
-        // Adding an item should trigger PropertyChanged for Price
-        public void AddingAnITemShouldTirggerPropertyChanged(string propertyName)
+        public void AddingAnItemShouldTriggerPropertyChanged(string propertyName)
         {
             var order = new Order();
             var item = new MockOrderItem();
+            item.Price = 12.00;
 
             Assert.PropertyChanged(order, propertyName, () =>
             {
@@ -99,13 +129,21 @@ namespace CowboyCafe.DataTests
             });
         }
 
+        /// <summary>
+        /// Tests the Order classes' ability to trigger the PropertyChanged
+        /// event handler when either the Subtotal or Items property is changed
+        /// due to an item being removed from the order represented by the Order class.
+        /// </summary>
+        /// <param name="propertyName">The property whose change should trigger
+        /// the PropertyChanged event handler.</param>
         [Theory]
-        [InlineData("Price")]
+        [InlineData("Subtotal")]
         [InlineData("Items")]
         public void RemovingAnItemShouldTriggerPropertyChanged(string propertyName)
         {
             var order = new Order();
             var item = new MockOrderItem();
+            item.Price = 12.00;
             order.Add(item);
 
             Assert.PropertyChanged(order, propertyName, () =>
@@ -113,6 +151,26 @@ namespace CowboyCafe.DataTests
                 order.Remove(item);
 
             });
+        }
+
+        /// <summary>
+        /// Tests the Order classes' ability to assign unique identifiers
+        /// to each Order object it implements.
+        /// </summary>
+        [Fact]
+        public void EveryClassShouldHaveAUniqueIdentifier()
+        {
+            Order[] orders = new Order[30];
+
+            for(var index = 0; index < 30; ++index)
+            {
+                orders[index] = new Order();
+            }
+
+            for (var index = 0; index < 30; ++index)
+            {
+                Assert.True(orders[index].OrderNumber == index + 1);
+            }
         }
     }
 }
