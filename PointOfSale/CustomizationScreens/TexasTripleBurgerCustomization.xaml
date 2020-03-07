@@ -1,0 +1,124 @@
+﻿<!---
+    Author: William Raymann.
+    Class: TexasTripleBurgerCustomization.xaml
+    Purpose: List the customization options for the Texas Triple
+             Burger order item and to allow the user to change
+             the Texas Triple Burger order item.
+    -->
+    
+<UserControl x:Class="PointOfSale.CustomizationScreens.TexasTripleBurgerCustomization"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale.CustomizationScreens"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.ColumnSpan="2" FontSize="20" Background="LightPink">Texas Triple Burger Options</TextBlock>
+
+
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Bun:" Background="LightGreen" Grid.Row="0"/>
+                <CheckBox Content="Bun" IsChecked="{Binding Path=Bun}" Grid.Row="1"/>
+
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Ketchup:" Background="LightGreen" Grid.Row="0"/>
+                <CheckBox Content="Ketchup" IsChecked="{Binding Path=Ketchup}" Grid.Row="1"/>
+
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Mustard:" Background="LightGreen" Grid.Row="0"/>
+                <CheckBox Content="Mustard" IsChecked="{Binding Path=Mustard}" Grid.Row="1"/>
+
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Pickle:" Background="LightGreen" Grid.Row="0"/>
+                <CheckBox Content="Pickle" IsChecked="{Binding Path=Pickle}" Grid.Row="1"/>
+
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Cheese:" Background="LightGreen" Grid.Row="0"/>
+                <CheckBox Content="Cheese" IsChecked="{Binding Path=Cheese}" Grid.Row="1"/>
+
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Tomato:" Background="LightGreen" Grid.Row="0"/>
+                <CheckBox Content="Tomato" IsChecked="{Binding Path=Tomato}" Grid.Row="1"/>
+
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Lettuce:" Background="LightGreen" Grid.Row="0"/>
+                <CheckBox Content="Lettuce" IsChecked="{Binding Path=Lettuce}" Grid.Row="1"/>
+
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Mayo:" Background="LightGreen" Grid.Row="0"/>
+                <CheckBox Content="Mayo" IsChecked="{Binding Path=Mayo}" Grid.Row="1"/>
+
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Bacon:" Background="LightGreen" Grid.Row="0"/>
+                <CheckBox Content="Bacon" IsChecked="{Binding Path=Bacon}" Grid.Row="1"/>
+
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Egg:" Background="LightGreen" Grid.Row="0"/>
+                <CheckBox Content="Egg" IsChecked="{Binding Path=Egg}" Grid.Row="1"/>
+
+            </Grid>
+
+        </StackPanel>
+
+    </Grid>
+</UserControl>

@@ -6,18 +6,38 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A class representing the Chili Cheese Fries side.
     /// </summary>
-    public class ChiliCheeseFries : Side
+    public class ChiliCheeseFries : Side, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event handler for changes in Chili Cheese Fries data.
+        /// </summary>
+        public override event PropertyChangedEventHandler PropertyChanged;
+
+        private Size size = Size.Small;
         /// <summary>
         /// Stores the size of the Chili Cheese Fries entree.
         /// </summary>
-        public override Size Size { get; set; }
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                if(size != value)
+                {
+                    size = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                }
+            }
+        }
 
         /// <summary>
         /// Returns the Calories in the Chili Cheese Fries side based on size.

@@ -6,18 +6,38 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A class representing a Baked Beans entree in the Cowboy Cafe.
     /// </summary>
-    public class BakedBeans : Side
+    public class BakedBeans : Side, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event handler for changes in Baked Beans data.
+        /// </summary>
+        public override event PropertyChangedEventHandler PropertyChanged;
+
+        private Size size = Size.Small;
         /// <summary>
         /// Stores the size of the Baked Beans entree.
         /// </summary>
-        public override Size Size { get; set; }
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                if(size != value)
+                {
+                    size = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                }
+            }
+        }
 
         /// <summary>
         /// Returns the price of a Baked Beans entree based on size.

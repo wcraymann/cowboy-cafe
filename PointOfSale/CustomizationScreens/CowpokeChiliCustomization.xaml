@@ -1,0 +1,66 @@
+﻿<!---
+    Author: William Raymann.
+    Class: CowpokeChiliCustomization.xaml
+    Purpose: List the customization options for the Cowpoke
+             Chili order item and to allow the user to change
+             the Cowpoke Chili order item.
+    -->
+    
+<UserControl x:Class="PointOfSale.CustomizationScreens.CowpokeChiliCustomization"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale.CustomizationScreens"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.ColumnSpan="2" FontSize="20" Background="LightPink">Cowpoke Chili Options</TextBlock>
+
+
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <CheckBox IsChecked="{Binding Path=Cheese}" Grid.Column="0"/>
+                <TextBlock Text="Cheese" Grid.Column="1"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <CheckBox IsChecked="{Binding Path=SourCream}" Grid.Column="0"/>
+                <TextBlock Text="Sour Cream" Grid.Column="1"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <CheckBox IsChecked="{Binding Path=GreenOnions}" Grid.Column="0"/>
+                <TextBlock Text="Green Onions" Grid.Column="1"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <CheckBox IsChecked="{Binding Path=TortillaStrips}" Grid.Column="0"/>
+                <TextBlock Text="Tortilla Strips" Grid.Column="1"/>
+            </Grid>
+
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

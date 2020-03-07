@@ -6,14 +6,20 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A class representing a Jerked Soda in the Cowboy Cafe.
     /// </summary>
-    public class JerkedSoda : Drink
+    public class JerkedSoda : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// The event handler for changes in Jerked Soda data.
+        /// </summary>
+        public override event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Returns the price of the Jerked Soda based on its size.
         /// </summary>
@@ -56,10 +62,62 @@ namespace CowboyCafe.Data
             }
         }
 
+        private SodaFlavor flavor = SodaFlavor.CreamSoda;
         /// <summary>
         /// Stores the flavor of the Jerked Soda.
         /// </summary>
-        public SodaFlavor Flavor { get; set; }
+        public SodaFlavor Flavor 
+        { 
+            get { return flavor; }
+            set
+            {
+                if(flavor != value) {
+                    flavor = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                }
+                
+            } 
+        }
+
+        private Size size = Size.Small;
+        /// <summary>
+        /// Stores the size of the Jerked Soda.
+        /// </summary>
+        public override Size Size
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                if(size != value)
+                {
+                    size = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                }
+            }
+        }
+
+        private bool ice = true;
+        /// <summary>
+        /// True if the Jerked Soda should come with ice.
+        /// </summary>
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                if(ice != value)
+                {
+                    ice = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                }
+            }
+        }
 
         /// <summary>
         /// Returns the special instructions for the Jerked Soda based on object data.

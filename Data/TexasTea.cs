@@ -6,14 +6,20 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A class to represent the Texas Tea in the Cowboy Cafe.
     /// </summary>
-    public class TexasTea : Drink
+    public class TexasTea : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event handler for changes in Texas Tea data.
+        /// </summary>
+        public override event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Returns the price of the Texas Tea based on its size.
         /// </summary>
@@ -59,15 +65,81 @@ namespace CowboyCafe.Data
             }
         }
 
+        private Size size = Size.Small;
+        /// <summary>
+        /// Stores the size of the Texas Tea.
+        /// </summary>
+        public override Size Size
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                if (size != value)
+                {
+                    size = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                }
+            }
+        }
+
+        private bool ice = true;
+        /// <summary>
+        /// True if the Texas Tea should come with ice.
+        /// </summary>
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                if (ice != value)
+                {
+                    ice = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                }
+            }
+        }
+
+        private bool sweet = true;
         /// <summary>
         /// A variable that is true if the Texas Tea is has sweetner in it.
         /// </summary>
-        public bool Sweet { get; set; } = true;
+        public bool Sweet
+        {
+            get { return sweet; }
+            set
+            {
+                if(sweet != value)
+                {
+                    sweet = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sweet"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecilaInstructions"));
+                }
+            }
+        }
 
+        private bool lemon = false;
         /// <summary>
         /// A variable that is true if the Texas Tea has a lemon in it.
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon
+        {
+            get { return lemon; }
+            set
+            {
+                if(lemon != value)
+                {
+                    lemon = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                }
+            }
+        }
 
         /// <summary>
         /// Returns the special instructions of the Texas Tea based on object data.

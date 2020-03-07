@@ -1,0 +1,71 @@
+﻿<!---
+    Author: William Raymann.
+    Class: JerkedSodaCustomization.xaml
+    Purpose: List the customization options for the Jerked
+             Soda order item and to allow the user to change
+             the Jerked Soda order item.
+    -->
+    
+<UserControl x:Class="PointOfSale.CustomizationScreens.JerkedSodaCustomization"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale.CustomizationScreens"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.ColumnSpan="2" FontSize="20" Background="LightPink">Jerked Soda Options</TextBlock>
+
+
+        <StackPanel Grid.Column="0" Grid.Row="1" Width="200" HorizontalAlignment="Left">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Flavor:" Grid.Row="0" Background="LightGreen"/>
+                <RadioButton Content="Cream Soda" GroupName="JerkedSodaFlavor" Grid.Row="1" Click="JerkedSodaFlavorSelect"/>
+                <RadioButton Content="Orange Soda" GroupName="JerkedSodaFlavor" Grid.Row="2" Click="JerkedSodaFlavorSelect"/>
+                <RadioButton Content="Sarsaparilla" GroupName="JerkedSodaFlavor" Grid.Row="3" Click="JerkedSodaFlavorSelect"/>
+                <RadioButton Content="Birch Beer" GroupName="JerkedSodaFlavor" Grid.Row="4" Click="JerkedSodaFlavorSelect"/>
+                <RadioButton Content="Root Beer" GroupName="JerkedSodaFlavor" Grid.Row="5" Click="JerkedSodaFlavorSelect"/>
+                
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Size:" Grid.Row="0" Background="LightGreen"/>
+                <RadioButton Content="Large" GroupName="JerkedSodaSize" Grid.Row="1" Click="JerkedSodaSizeSelect"/>
+                <RadioButton Content="Medium" GroupName="JerkedSodaSize" Grid.Row="2" Click="JerkedSodaSizeSelect"/>
+                <RadioButton Content="Small" GroupName="JerkedSodaSize" Grid.Row="3" Click="JerkedSodaSizeSelect"/>
+
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Ice:" Grid.Row="0" Grid.ColumnSpan="2" Background="LightGreen"/>
+                <CheckBox IsChecked="{Binding Path=Ice}" Content="Ice" Grid.Row="1"/>
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

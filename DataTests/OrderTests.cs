@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -19,8 +20,9 @@ namespace CowboyCafe.DataTests
         /// <summary>
         /// An order item to test the Order classes' Items property.
         /// </summary>
-        public class MockOrderItem : IOrderItem
+        public class MockOrderItem : IOrderItem, INotifyPropertyChanged
         {
+            public event PropertyChangedEventHandler PropertyChanged;
             public double Price { get; set; }
 
             public List<string> SpecialInstructions { get; set; } = new List<string>();

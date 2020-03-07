@@ -1,8 +1,9 @@
 ﻿/*
  * Author: William Raymann.
- * Class: OrderSummary.xaml.
- * Purpose: To provide a summary of the current order on the display.
- */ 
+ * Class: PandDeCampoCustomization.xaml.
+ * Purpose: To provide the controls to customize the current Pan De Campo
+ *          item in the current order.
+ */
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,17 +16,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using CowboyCafe.Data;
-using System.Windows.Markup;
 
-namespace PointOfSale
+namespace PointOfSale.CustomizationScreens
 {
     /// <summary>
-    /// Interaction logic for OrderSummaryControl.xaml
+    /// Interaction logic for PecosPulledPorkCustomization.xaml
     /// </summary>
-    public partial class OrderSummaryControl : UserControl
+    public partial class PecosPulledPorkCustomization : UserControl
     {
-        public OrderSummaryControl()
+        public PecosPulledPorkCustomization()
         {
             InitializeComponent();
         }

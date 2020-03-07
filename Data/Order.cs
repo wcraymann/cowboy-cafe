@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+using System.Windows;
 
 namespace CowboyCafe.Data
 {
@@ -66,12 +67,16 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Event handler for changes in Order data.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Adds the passed item to the list of order items and notifies
-        /// the MainWindow that Items has changed. It also notifies the MainWindow
-        /// if Subtotal has changed as a result of the change in Items.
+        /// the MainWindow that Items has changed. It also subscribes to the
+        /// PropertyChanged event handler in each item so it can invoke its
+        /// own PropertyChanged event handler.
         /// </summary>
         /// <param name="item">The element to be added to Items.</param>
         public void Add(IOrderItem item) 
@@ -79,6 +84,7 @@ namespace CowboyCafe.Data
             double preSubtotal = Subtotal;
 
             items.Add(item);
+            item.PropertyChanged += OnItemChanged;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
 
             if (!(Math.Abs(Subtotal - preSubtotal) < 0.001))
@@ -87,8 +93,8 @@ namespace CowboyCafe.Data
 
         /// <summary>
         /// Removes the passed item from the list of order items and notifies
-        /// the MainWindow that Items has changed. It also notifies the MainWindow
-        /// if Subtotal has changed as a result of the change in Items.
+        /// the MainWindow that Items has changed. It also unsubscribes from
+        /// the PropertyChanged event handler in the removed item.
         /// </summary>
         /// <param name="item">The element to remove from Items.</param>
         public void Remove(IOrderItem item) 
@@ -96,10 +102,30 @@ namespace CowboyCafe.Data
             double preSubtotal = Subtotal;
 
             items.Remove(item);
+            item.PropertyChanged -= OnItemChanged;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
 
             if (!(Math.Abs(Subtotal - preSubtotal) < 0.001)) 
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+        }
+
+        /// <summary>
+        /// Invokes the current object's PropertyChanged event handler for 
+        /// Items whenever it is called by an event handler from
+        /// one of the items in Items. It also invokes the current object's
+        /// PropertyChanged event handler if a "Price" property form of the
+        /// Items' items is sent in the event args e.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnItemChanged(object sender, PropertyChangedEventArgs e)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+
+            if(e.PropertyName=="Price")
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            }
         }
     }
 }

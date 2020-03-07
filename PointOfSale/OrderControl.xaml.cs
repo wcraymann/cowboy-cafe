@@ -1,9 +1,9 @@
 ﻿/*
  * Author: William Raymann.
  * Class: MenuItemSelectionControl.xaml.
- * Purpose: To display the order items with buttons and add them to 
- *          the current order when their corresponding buttons are 
- *          clicked.
+ * Purpose: To display the order items with buttons, a summary of
+ *          the order, and a customization screen when an order item
+ *          is added to the order.
  */
 using System;
 using System.Collections.Generic;
@@ -29,36 +29,54 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
+
         }
 
         /// <summary>
-        /// Undefined for now.
+        /// Swaps the screen back to the MenuItemSelectionConrol from
+        /// whichever order item customization control is currently
+        /// being displayed.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
-            // Undefined for now.
+            SwapScreen(new MenuItemSelectionControl());
         }
 
         /// <summary>
-        /// Cancels the current order and creates a new order.
+        /// Cancels the current order, creates a new order, and swaps the 
+        /// screen to the MenuItemSelectionControl.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+            SwapScreen(new MenuItemSelectionControl());
         }
 
         /// <summary>
-        /// Completes the current order and creates a new order.
+        /// Completes the current order, creates a new order, and
+        /// swaps the screen to the MenuItemSelectionControl.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void CompleteOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+            SwapScreen(new MenuItemSelectionControl());
+        }
+
+        /// <summary>
+        /// Swaps the main portion of the screen (the area occupied
+        /// by either MenuItemSelectionControl or an order item
+        /// customization control) to the passed FrameworkElement.
+        /// </summary>
+        /// <param name="element"></param>
+        public void SwapScreen(FrameworkElement element)
+        {
+            Container.Child = element;
         }
     }
 }
