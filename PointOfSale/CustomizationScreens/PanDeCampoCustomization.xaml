@@ -6,7 +6,7 @@
              the Pan De Campo order item.
     -->
     
-<UserControl x:Class="PointOfSale.CustomizationScreens.PandDeCampoCustomization"
+<UserControl x:Class="PointOfSale.CustomizationScreens.PanDeCampoCustomization"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

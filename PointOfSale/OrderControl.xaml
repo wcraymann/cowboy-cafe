@@ -11,7 +11,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="800" x:Name="OrderInterface">
+             d:DesignHeight="500" d:DesignWidth="820" x:Name="OrderInterface">
     
     <UserControl.Resources>
         <Style TargetType="Button">
@@ -42,7 +42,7 @@
                 <local:MenuItemSelectionControl/>
             </Border>
         </StackPanel>
-        <local:OrderSummaryControl Grid.Column="1" Width="300"/>
+        <local:OrderSummaryControl Grid.Column="1" Width="320"/>
     </Grid>
     
 </UserControl>

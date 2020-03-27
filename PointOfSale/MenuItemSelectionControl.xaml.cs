@@ -115,7 +115,7 @@ namespace PointOfSale
                             break;
                         case "PanDeCampo":
                             var newCampo = new PanDeCampo();
-                            var campoScreen = new PandDeCampoCustomization();
+                            var campoScreen = new PanDeCampoCustomization();
                             campoScreen.DataContext = newCampo;
                             order.Add(newCampo);
                             orderControl?.SwapScreen(campoScreen);

@@ -23,9 +23,9 @@ namespace PointOfSale.CustomizationScreens
     /// <summary>
     /// Interaction logic for PandDeCampoCustomization.xaml
     /// </summary>
-    public partial class PandDeCampoCustomization : UserControl
+    public partial class PanDeCampoCustomization : UserControl
     {
-        public PandDeCampoCustomization()
+        public PanDeCampoCustomization()
         {
             InitializeComponent();
         }
