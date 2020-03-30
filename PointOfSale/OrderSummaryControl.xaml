@@ -20,7 +20,7 @@
         </Style>
     </UserControl.Resources>
 
-    <StackPanel Width="320" Grid.Column="0">
+    <StackPanel Width="300" Grid.Column="0">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="35"/>
@@ -29,24 +29,26 @@
             <TextBlock Name="OrderSummaryHeader" Text="Order "/>
             <TextBlock Grid.Column="1" Text="{Binding Path=OrderNumber}"/>
         </Grid>
-        <ListBox ItemsSource="{Binding Path=Items}" Height ="450" BorderThickness="1" BorderBrush="Black" Width="320" SelectionChanged="OnSelectionChanged">
+        <ListBox ItemsSource="{Binding Path=Items}" Height ="450" BorderThickness="1" BorderBrush="Black" Width="300" SelectionChanged="OnSelectionChanged" Padding="0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Text="{Binding}" TextAlignment="Center" Grid.Column="0" Grid.Row="0"/>
-                        <TextBlock Text="{Binding Path=Price, StringFormat=c}" Grid.Column="1" Grid.Row="0"/>
-                        <Button Content="X" Foreground="White" Background="Red" Grid.Column="2" Grid.Row="0" Width="20" Height="20" Click="OnDeleteItem"/>
-                        <ListView ItemsSource="{Binding Path=SpecialInstructions}" HorizontalContentAlignment="Center" Grid.Row="1" Grid.Column="0" BorderThickness="0"/>
-                    </Grid>
+                    <Border Padding="0" BorderThickness="1" BorderBrush="Black">
+                        <Grid Background="Violet">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock VerticalAlignment="Center" Text="{Binding}" TextAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Path=Price, StringFormat=c}" Grid.Column="1" Grid.Row="0"/>
+                            <Button VerticalAlignment="Center" Content="X" Foreground="White" Background="Red" Grid.Column="2" Grid.Row="0" Width="40" Height="40" Click="OnDeleteItem"/>
+                            <ListView Background="Violet" ItemsSource="{Binding Path=SpecialInstructions}" HorizontalContentAlignment="Center" Grid.Row="1" Grid.Column="0" BorderThickness="0"/>
+                        </Grid>
+                    </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

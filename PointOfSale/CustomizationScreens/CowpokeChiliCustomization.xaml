@@ -15,6 +15,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.LayoutTransform>
+            <ScaleTransform ScaleX="2" ScaleY="2"/>
+        </Grid.LayoutTransform>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition/>
@@ -28,36 +31,40 @@
 
         <StackPanel Grid.Column="0" Grid.Row="1">
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="20"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <CheckBox IsChecked="{Binding Path=Cheese}" Grid.Column="0"/>
-                <TextBlock Text="Cheese" Grid.Column="1"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Cheese:" Background="LightGreen" Grid.Row="0"/>
+                <CheckBox Content="Cheese" IsChecked="{Binding Path=Cheese}" Grid.Row="1"/>
+                
             </Grid>
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="20"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <CheckBox IsChecked="{Binding Path=SourCream}" Grid.Column="0"/>
-                <TextBlock Text="Sour Cream" Grid.Column="1"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Sour Cream:" Background="LightGreen" Grid.Row="0"/>
+                <CheckBox Content="Sour Cream" IsChecked="{Binding Path=SourCream}" Grid.Row="1"/>
+
             </Grid>
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="20"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <CheckBox IsChecked="{Binding Path=GreenOnions}" Grid.Column="0"/>
-                <TextBlock Text="Green Onions" Grid.Column="1"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Green Onions:" Background="LightGreen" Grid.Row="0"/>
+                <CheckBox Content="Green Onions" IsChecked="{Binding Path=GreenOnions}" Grid.Row="1"/>
+
             </Grid>
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="20"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <CheckBox IsChecked="{Binding Path=TortillaStrips}" Grid.Column="0"/>
-                <TextBlock Text="Tortilla Strips" Grid.Column="1"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="TortillaStrips:" Background="LightGreen" Grid.Row="0"/>
+                <CheckBox Content="TortillaStrips" IsChecked="{Binding Path=TortillaStrips}" Grid.Row="1"/>
+
             </Grid>
 
         </StackPanel>
