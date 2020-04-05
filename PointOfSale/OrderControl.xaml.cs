@@ -26,6 +26,9 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
+        /// <summary>
+        /// Create a new WPF to control order creation in the Cowboy Cafe.
+        /// </summary>
         public OrderControl()
         {
             InitializeComponent();
@@ -42,6 +45,11 @@ namespace PointOfSale
         private void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
             SwapScreen(new MenuItemSelectionControl());
+
+            // Make sure that none of the order items in the OrderSummary are selected
+            // so that if the user selects any their customization screen will automatically
+            // appear.
+            OrderSummary.ListOfOrderItems.SelectedItem = null;
         }
 
         /// <summary>
@@ -52,20 +60,22 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
+            var parent = this.FindAncestor<MainWindow>();
+            parent.DataContext = new Order();
             SwapScreen(new MenuItemSelectionControl());
         }
 
         /// <summary>
-        /// Completes the current order, creates a new order, and
-        /// swaps the screen to the MenuItemSelectionControl.
+        /// Completes the current order and loads the OrderTransactionControl.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void CompleteOrder_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
+            var parent = this.FindAncestor<MainWindow>();
+
             SwapScreen(new MenuItemSelectionControl());
+            parent.SwapOrderControlAndOrderTransactionControl();
         }
 
         /// <summary>

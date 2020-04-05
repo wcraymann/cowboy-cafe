@@ -30,7 +30,7 @@
 
 
         <StackPanel Grid.ColumnSpan="2" Grid.Row="1">
-            <TextBlock Text="There are no customization options for the Rustler's Ribs Item."/>
+            <TextBlock Text="There are no customization options."/>
 
         </StackPanel>
 

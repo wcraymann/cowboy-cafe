@@ -28,6 +28,7 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
+
         public MenuItemSelectionControl()
         {
             InitializeComponent();
@@ -103,6 +104,21 @@ namespace PointOfSale
                             var newFries = new ChiliCheeseFries();
                             var friesScreen = new ChiliCheeseFriesCustomization();
                             friesScreen.DataContext = newFries;
+
+                            // Check the appropriate size radio button on the friesScreen.
+                            switch (newFries.Size)
+                            {
+                                case CowboyCafe.Data.Size.Large:
+                                    friesScreen.SizeLarge.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.Size.Medium:
+                                    friesScreen.SizeMedium.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.Size.Small:
+                                    friesScreen.SizeSmall.IsChecked = true;
+                                    break;
+                            }
+
                             order.Add(newFries);
                             orderControl?.SwapScreen(friesScreen);
                             break;
@@ -110,6 +126,21 @@ namespace PointOfSale
                             var newDodgers = new CornDodgers();
                             var dodgersScreen = new CornDodgersCustomization();
                             dodgersScreen.DataContext = newDodgers;
+
+                            // Check the appropriate size radio button on the dodgersScreen.
+                            switch (newDodgers.Size)
+                            {
+                                case CowboyCafe.Data.Size.Large:
+                                    dodgersScreen.SizeLarge.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.Size.Medium:
+                                    dodgersScreen.SizeMedium.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.Size.Small:
+                                    dodgersScreen.SizeSmall.IsChecked = true;
+                                    break;
+                            }
+
                             order.Add(newDodgers);
                             orderControl?.SwapScreen(dodgersScreen);
                             break;
@@ -117,6 +148,21 @@ namespace PointOfSale
                             var newCampo = new PanDeCampo();
                             var campoScreen = new PanDeCampoCustomization();
                             campoScreen.DataContext = newCampo;
+
+                            // Check the appropriate size radio button on the camposScreen.
+                            switch (newCampo.Size)
+                            {
+                                case CowboyCafe.Data.Size.Large:
+                                    campoScreen.SizeLarge.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.Size.Medium:
+                                    campoScreen.SizeMedium.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.Size.Small:
+                                    campoScreen.SizeSmall.IsChecked = true;
+                                    break;
+                            }
+
                             order.Add(newCampo);
                             orderControl?.SwapScreen(campoScreen);
                             break;
@@ -124,6 +170,21 @@ namespace PointOfSale
                             var newBeans = new BakedBeans();
                             var beanScreen = new BakedBeansCustomization();
                             beanScreen.DataContext = newBeans;
+
+                            // Check the appropriate size radio button on the bakedBeansScreen.
+                            switch (newBeans.Size)
+                            {
+                                case CowboyCafe.Data.Size.Large:
+                                    beanScreen.SizeLarge.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.Size.Medium:
+                                    beanScreen.SizeMedium.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.Size.Small:
+                                    beanScreen.SizeSmall.IsChecked = true;
+                                    break;
+                            }
+
                             order.Add(newBeans);
                             orderControl?.SwapScreen(beanScreen);
                             break;
@@ -131,6 +192,45 @@ namespace PointOfSale
                             var newSoda = new JerkedSoda();
                             var sodaScreen = new JerkedSodaCustomization();
                             sodaScreen.DataContext = newSoda;
+
+                            // Check the appropriate flavor radio button on the sodaScreen.
+                            switch (newSoda.Flavor)
+                            {
+                                case CowboyCafe.Data.SodaFlavor.CreamSoda:
+                                    sodaScreen.FlavorCreamSoda.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.SodaFlavor.OrangeSoda:
+                                    sodaScreen.FlavorCreamSoda.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.SodaFlavor.Sarsaparilla:
+                                    sodaScreen.FlavorSarsaparilla.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.SodaFlavor.BirchBeer:
+                                    sodaScreen.FlavorBirchBeer.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.SodaFlavor.RootBeer:
+                                    sodaScreen.FlavorRootBeer.IsChecked = true;
+                                    break;
+                                default:
+                                    throw new NotImplementedException("Unknown Flavor");
+                            }
+
+                            // Check the appropriate size radio button on the sodaScreen.
+                            switch (newSoda.Size)
+                            {
+                                case CowboyCafe.Data.Size.Large:
+                                    sodaScreen.SizeLarge.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.Size.Medium:
+                                    sodaScreen.SizeMedium.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.Size.Small:
+                                    sodaScreen.SizeSmall.IsChecked = true;
+                                    break;
+                                default:
+                                    throw new NotImplementedException("Unknown Size");
+                            }
+
                             order.Add(newSoda);
                             orderControl?.SwapScreen(sodaScreen);
                             break;
@@ -138,6 +238,23 @@ namespace PointOfSale
                             var newTea = new TexasTea();
                             var teaScreen = new TexasTeaCustomization();
                             teaScreen.DataContext = newTea;
+
+                            // Check the appropriate size radio button on the texasTeaScreen.
+                            switch (newTea.Size)
+                            {
+                                case CowboyCafe.Data.Size.Large:
+                                    teaScreen.SizeLarge.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.Size.Medium:
+                                    teaScreen.SizeMedium.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.Size.Small:
+                                    teaScreen.SizeSmall.IsChecked = true;
+                                    break;
+                                default:
+                                    throw new NotImplementedException("Unknown Size");
+                            }
+
                             order.Add(newTea);
                             orderControl?.SwapScreen(teaScreen);
                             break;
@@ -145,6 +262,23 @@ namespace PointOfSale
                             var newCoffee = new CowboyCoffee();
                             var coffeeScreen = new CowboyCoffeeCustomization();
                             coffeeScreen.DataContext = newCoffee;
+
+                            // Check the appropriate size radio button on the coffeeScreen.
+                            switch (newCoffee.Size)
+                            {
+                                case CowboyCafe.Data.Size.Large:
+                                    coffeeScreen.SizeLarge.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.Size.Medium:
+                                    coffeeScreen.SizeMedium.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.Size.Small:
+                                    coffeeScreen.SizeSmall.IsChecked = true;
+                                    break;
+                                default:
+                                    throw new NotImplementedException("Unknown Size");
+                            }
+
                             order.Add(newCoffee);
                             orderControl?.SwapScreen(coffeeScreen);
                             break;
@@ -152,6 +286,23 @@ namespace PointOfSale
                             var newWater = new Water();
                             var waterScreen = new WaterCustomization();
                             waterScreen.DataContext = newWater;
+
+                            // Check the appropriate size radio button on the waterScreen.
+                            switch (newWater.Size)
+                            {
+                                case CowboyCafe.Data.Size.Large:
+                                    waterScreen.SizeLarge.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.Size.Medium:
+                                    waterScreen.SizeMedium.IsChecked = true;
+                                    break;
+                                case CowboyCafe.Data.Size.Small:
+                                    waterScreen.SizeSmall.IsChecked = true;
+                                    break;
+                                default:
+                                    throw new NotImplementedException("Unknown Size");
+                            }
+
                             order.Add(newWater);
                             orderControl?.SwapScreen(waterScreen);
                             break;

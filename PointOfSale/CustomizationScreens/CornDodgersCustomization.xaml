@@ -38,9 +38,9 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Size:" Grid.Row="0" Background="LightGreen"/>
-                <RadioButton Content="Large" GroupName="CornDodgersSize" Grid.Row="1" Click="CornDodgersSizeSelect"/>
-                <RadioButton Content="Medium" GroupName="CornDodgersSize" Grid.Row="2" Click="CornDodgersSizeSelect"/>
-                <RadioButton Content="Small" GroupName="CornDodgersSize" Grid.Row="3" Click="CornDodgersSizeSelect"/>
+                <RadioButton Name="SizeLarge" Content="Large" GroupName="CornDodgersSize" Grid.Row="1" Click="CornDodgersSizeSelect"/>
+                <RadioButton Name="SizeMedium" Content="Medium" GroupName="CornDodgersSize" Grid.Row="2" Click="CornDodgersSizeSelect"/>
+                <RadioButton Name="SizeSmall" Content="Small" GroupName="CornDodgersSize" Grid.Row="3" Click="CornDodgersSizeSelect"/>
 
             </Grid>
 

@@ -38,9 +38,9 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Size:" Grid.Row="0" Background="LightGreen"/>
-                <RadioButton Content="Large" GroupName="TexasTeaSize" Grid.Row="1" Click="TexasTeaSizeSelect"/>
-                <RadioButton Content="Medium" GroupName="TexasTeaSize" Grid.Row="2" Click="TexasTeaSizeSelect"/>
-                <RadioButton Content="Small" GroupName="TexasTeaSize" Grid.Row="3" Click="TexasTeaSizeSelect"/>
+                <RadioButton Name="SizeLarge" Content="Large" GroupName="TexasTeaSize" Grid.Row="1" Click="TexasTeaSizeSelect"/>
+                <RadioButton Name="SizeMedium" Content="Medium" GroupName="TexasTeaSize" Grid.Row="2" Click="TexasTeaSizeSelect"/>
+                <RadioButton Name="SizeSmall" Content="Small" GroupName="TexasTeaSize" Grid.Row="3" Click="TexasTeaSizeSelect"/>
 
             </Grid>
             <Grid>

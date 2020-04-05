@@ -58,24 +58,93 @@ namespace PointOfSale
             {
                 var bakedBeansScreen = new BakedBeansCustomization();
                 bakedBeansScreen.DataContext = bakedBeansItem;
+
+                // Check the appropriate size radio button on the bakedBeansScreen.
+                switch ((selectedItem as BakedBeans).Size)
+                {
+                    case CowboyCafe.Data.Size.Large:
+                        bakedBeansScreen.SizeLarge.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.Size.Medium:
+                        bakedBeansScreen.SizeMedium.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.Size.Small:
+                        bakedBeansScreen.SizeSmall.IsChecked = true;
+                        break;
+                    default:
+                        throw new NotImplementedException("Unknown Size");
+                }
+
                 orderControl?.SwapScreen(bakedBeansScreen);
             }
             else if (selectedItem is ChiliCheeseFries chiliCheeseFriesItem)
             {
                 var chiliCheeseFriesScreen = new ChiliCheeseFriesCustomization();
                 chiliCheeseFriesScreen.DataContext = chiliCheeseFriesItem;
+
+
+                // Check the appropriate size radio button on the chiliCheeseFriesScreen.
+                switch ((selectedItem as ChiliCheeseFries).Size)
+                {
+                    case CowboyCafe.Data.Size.Large:
+                        chiliCheeseFriesScreen.SizeLarge.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.Size.Medium:
+                        chiliCheeseFriesScreen.SizeMedium.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.Size.Small:
+                        chiliCheeseFriesScreen.SizeSmall.IsChecked = true;
+                        break;
+                    default:
+                        throw new NotImplementedException("Unknown Size");
+                }
+
                 orderControl?.SwapScreen(chiliCheeseFriesScreen);
             }
             else if (selectedItem is CornDodgers cornDodgersItem)
             {
                 var cornDodgersScreen = new CornDodgersCustomization();
                 cornDodgersScreen.DataContext = cornDodgersItem;
+
+                // Check the appropriate size radio button on the cornDodgersScreen.
+                switch ((selectedItem as CornDodgers).Size)
+                {
+                    case CowboyCafe.Data.Size.Large:
+                        cornDodgersScreen.SizeLarge.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.Size.Medium:
+                        cornDodgersScreen.SizeMedium.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.Size.Small:
+                        cornDodgersScreen.SizeSmall.IsChecked = true;
+                        break;
+                    default:
+                        throw new NotImplementedException("Unknown Size");
+                }
+
                 orderControl?.SwapScreen(cornDodgersScreen);
             }
             else if (selectedItem is CowboyCoffee cowboyCoffeeItem)
             {
                 var cowboyCoffeeScreen = new CowboyCoffeeCustomization();
                 cowboyCoffeeScreen.DataContext = cowboyCoffeeItem;
+
+                // Check the appropriate size radio button on the cowboyCoffeeScreen.
+                switch ((selectedItem as CowboyCoffee).Size)
+                {
+                    case CowboyCafe.Data.Size.Large:
+                        cowboyCoffeeScreen.SizeLarge.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.Size.Medium:
+                        cowboyCoffeeScreen.SizeMedium.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.Size.Small:
+                        cowboyCoffeeScreen.SizeSmall.IsChecked = true;
+                        break;
+                    default:
+                        throw new NotImplementedException("Unknown Size");
+                }
+
                 orderControl?.SwapScreen(cowboyCoffeeScreen);
             }
             else if (selectedItem is CowpokeChili cowpokeChiliItem)
@@ -94,12 +163,68 @@ namespace PointOfSale
             {
                 var jerkedSodaScreen = new JerkedSodaCustomization();
                 jerkedSodaScreen.DataContext = jerkedSodaItem;
+
+                // Check the appropriate flavor radio button on the jerkedSodaScreen.
+                switch ((selectedItem as JerkedSoda).Flavor)
+                {
+                    case CowboyCafe.Data.SodaFlavor.CreamSoda:
+                        jerkedSodaScreen.FlavorCreamSoda.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.SodaFlavor.OrangeSoda:
+                        jerkedSodaScreen.FlavorCreamSoda.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.SodaFlavor.Sarsaparilla:
+                        jerkedSodaScreen.FlavorSarsaparilla.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.SodaFlavor.BirchBeer:
+                        jerkedSodaScreen.FlavorBirchBeer.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.SodaFlavor.RootBeer:
+                        jerkedSodaScreen.FlavorRootBeer.IsChecked = true;
+                        break;
+                    default:
+                        throw new NotImplementedException("Unknown Flavor");
+                }
+
+                // Check the appropriate size radio button on the jerkedSodaScreen.
+                switch ((selectedItem as JerkedSoda).Size)
+                {
+                    case CowboyCafe.Data.Size.Large:
+                        jerkedSodaScreen.SizeLarge.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.Size.Medium:
+                        jerkedSodaScreen.SizeMedium.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.Size.Small:
+                        jerkedSodaScreen.SizeSmall.IsChecked = true;
+                        break;
+                    default:
+                        throw new NotImplementedException("Unknown Size");
+                }
+
                 orderControl?.SwapScreen(jerkedSodaScreen);
             }
             else if (selectedItem is PanDeCampo panDeCampoItem)
             {
                 var panDeCampoScreen = new PanDeCampoCustomization();
                 panDeCampoScreen.DataContext = panDeCampoItem;
+
+                // Check the appropriate size radio button on the panDeCampoScreen.
+                switch ((selectedItem as PanDeCampo).Size)
+                {
+                    case CowboyCafe.Data.Size.Large:
+                        panDeCampoScreen.SizeLarge.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.Size.Medium:
+                        panDeCampoScreen.SizeMedium.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.Size.Small:
+                        panDeCampoScreen.SizeSmall.IsChecked = true;
+                        break;
+                    default:
+                        throw new NotImplementedException("Unknown Size");
+                }
+
                 orderControl?.SwapScreen(panDeCampoScreen);
             }
             else if (selectedItem is PecosPulledPork pecosPulledPorkItem)
@@ -118,6 +243,23 @@ namespace PointOfSale
             {
                 var texasTeaScreen = new TexasTeaCustomization();
                 texasTeaScreen.DataContext = texasTeaItem;
+
+                // Check the appropriate size radio button on the texasTeaScreen.
+                switch ((selectedItem as TexasTea).Size)
+                {
+                    case CowboyCafe.Data.Size.Large:
+                        texasTeaScreen.SizeLarge.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.Size.Medium:
+                        texasTeaScreen.SizeMedium.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.Size.Small:
+                        texasTeaScreen.SizeSmall.IsChecked = true;
+                        break;
+                    default:
+                        throw new NotImplementedException("Unknown Size");
+                }
+
                 orderControl?.SwapScreen(texasTeaScreen);
             }
             else if (selectedItem is TexasTripleBurger texasTripleBurgerItem)
@@ -136,6 +278,23 @@ namespace PointOfSale
             {
                 var waterScreen = new WaterCustomization();
                 waterScreen.DataContext = waterItem;
+
+                // Check the appropriate size radio button on the waterScreen.
+                switch ((selectedItem as Water).Size)
+                {
+                    case CowboyCafe.Data.Size.Large:
+                        waterScreen.SizeLarge.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.Size.Medium:
+                        waterScreen.SizeMedium.IsChecked = true;
+                        break;
+                    case CowboyCafe.Data.Size.Small:
+                        waterScreen.SizeSmall.IsChecked = true;
+                        break;
+                    default:
+                        throw new NotImplementedException("Unknown Size");
+                }
+
                 orderControl?.SwapScreen(waterScreen);
             }
 

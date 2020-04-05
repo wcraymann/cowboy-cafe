@@ -1,0 +1,33 @@
+﻿<!--
+    Author: William Raymann.
+    Class: BillPaymentControl.
+    Purpose: To allow the user to add and remove a type of bill from either the 
+             the Cash Register or from the record of the customers payment.
+    -->
+    
+<UserControl x:Class="PointOfSale.BillPaymentControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="80" d:DesignWidth="200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border Height="35" Width="100" BorderThickness="0,0,1,1" BorderBrush="Black" Grid.Column="0">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:BillPaymentControl}}, Path=BillCount}"/>
+        </Border>
+        <Border Height="35" Width="100" BorderThickness="1,0,1,1" BorderBrush="Black"  Grid.Column="1">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:BillPaymentControl}}, Path=BillType}" Grid.Column="1"/>
+        </Border>
+        <Button Click="OnAddBillToPayment" Content="+" Background="White" BorderThickness="1,0,1,1" Grid.Column="2"/>
+        <Button Click="OnRemoveBillToPayment" Content="-" Background="White" BorderThickness="1,0,0,1" Grid.Column="3"/>
+    </Grid>
+</UserControl>

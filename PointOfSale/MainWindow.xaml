@@ -1,8 +1,8 @@
 ﻿<!--
     Author: William Raymann.
     Class: MainWindow.xaml.
-    Purpose: Creates the window that OrderControl is displayed
-             in for the user.
+    Purpose: Creates the window that control are displayed in
+             and manages which control is displayed for the user.
     -->
 <Window x:Class="PointOfSale.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -12,5 +12,5 @@
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="820">
-    <local:OrderControl/>
+    
 </Window>

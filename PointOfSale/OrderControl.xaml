@@ -42,7 +42,7 @@
                 <local:MenuItemSelectionControl/>
             </Border>
         </StackPanel>
-        <local:OrderSummaryControl Grid.Column="1" Width="300"/>
+        <local:OrderSummaryControl x:Name="OrderSummary" Grid.Column="1" Width="300"/>
     </Grid>
     
 </UserControl>

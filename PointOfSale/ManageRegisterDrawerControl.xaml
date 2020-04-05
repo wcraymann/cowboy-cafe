@@ -1,0 +1,51 @@
+﻿<!--
+    Author: William Raymann.
+    Class: ManageRegisterDrawerControl.
+    Purpose: Allows the user to record adding or removing of bills and coins to and 
+             from the cash register drawer.
+    -->
+    
+<UserControl x:Class="PointOfSale.ManageRegisterDrawerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button Content="Done" Click="OnDoneManaging" Grid.ColumnSpan="2" Background="LightGreen" Foreground="White" Grid.Row="0" FontSize="20"/>
+        
+        <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" Width="400" Grid.Row="1">
+            <StackPanel VerticalAlignment="Top">
+                <local:CoinPaymentControl Height="35" CoinType="Penny" CoinCount="{Binding Path=RegisterPennies}"/>
+                <local:CoinPaymentControl Height="35" CoinType="Nickel" CoinCount="{Binding Path=RegisterNickels}"/>
+                <local:CoinPaymentControl Height="35" CoinType="Dime" CoinCount="{Binding Path=RegisterDimes}"/>
+                <local:CoinPaymentControl Height="35" CoinType="Quarter" CoinCount="{Binding Path=RegisterQuarters}"/>
+                <local:CoinPaymentControl Height="35" CoinType="HalfDollar" CoinCount="{Binding Path=RegisterHalfDollars}"/>
+                <local:CoinPaymentControl Height="35" CoinType="Dollar" CoinCount="{Binding Path=RegisterDollars}"/>
+                <local:BillPaymentControl Height="35" BillType="One" BillCount="{Binding Path=RegisterOnes}"/>
+                <local:BillPaymentControl Height="35" BillType="Two" BillCount="{Binding Path=RegisterTwos}"/>
+                <local:BillPaymentControl Height="35" BillType="Five" BillCount="{Binding Path=RegisterFives}"/>
+                <local:BillPaymentControl Height="35" BillType="Ten" BillCount="{Binding Path=RegisterTens}"/>
+                <local:BillPaymentControl Height="35" BillType="Twenty" BillCount="{Binding Path=RegisterTwenties}"/>
+                <local:BillPaymentControl Height="35" BillType="Fifty" BillCount="{Binding Path=RegisterFifties}"/>
+                <local:BillPaymentControl Height="35" BillType="Hundred" BillCount="{Binding Path=RegisterHundreds}"/>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Column="1" Grid.Row="1" BorderThickness="1" BorderBrush="Gold" VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+            <TextBlock Text="The Current Contents of the &#x0a;        Register Drawer" Margin="20" FontSize="20"/>
+        </Border>
+    </Grid>
+</UserControl>

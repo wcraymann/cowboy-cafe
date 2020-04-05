@@ -29,7 +29,7 @@
             <TextBlock Name="OrderSummaryHeader" Text="Order "/>
             <TextBlock Grid.Column="1" Text="{Binding Path=OrderNumber}"/>
         </Grid>
-        <ListBox ItemsSource="{Binding Path=Items}" Height ="450" BorderThickness="1" BorderBrush="Black" Width="300" SelectionChanged="OnSelectionChanged" Padding="0">
+        <ListBox Name="ListOfOrderItems" ItemsSource="{Binding Path=Items}" Height ="450" BorderThickness="1" BorderBrush="Black" Width="300" SelectionChanged="OnSelectionChanged" Padding="0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border Padding="0" BorderThickness="1" BorderBrush="Black">

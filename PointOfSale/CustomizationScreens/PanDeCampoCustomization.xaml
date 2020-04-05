@@ -38,9 +38,9 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Size:" Grid.Row="0" Background="LightGreen"/>
-                <RadioButton Content="Large" GroupName="PanDeCampoSize" Grid.Row="1" Click="PanDeCampoSizeSelect"/>
-                <RadioButton Content="Medium" GroupName="PanDeCampoSize" Grid.Row="2" Click="PanDeCampoSizeSelect"/>
-                <RadioButton Content="Small" GroupName="PanDeCampoSize" Grid.Row="3" Click="PanDeCampoSizeSelect"/>
+                <RadioButton Name="SizeLarge" Content="Large" GroupName="PanDeCampoSize" Grid.Row="1" Click="PanDeCampoSizeSelect"/>
+                <RadioButton Name="SizeMedium" Content="Medium" GroupName="PanDeCampoSize" Grid.Row="2" Click="PanDeCampoSizeSelect"/>
+                <RadioButton Name="SizeSmall" Content="Small" GroupName="PanDeCampoSize" Grid.Row="3" Click="PanDeCampoSizeSelect"/>
 
             </Grid>
 

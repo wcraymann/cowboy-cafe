@@ -1,0 +1,51 @@
+﻿<!--
+   Author: William Raymann.
+   Class: GiveChangeToCustomerControl.
+   Prupose: To create a WPF control to allow the cashier to record the money the 
+            customer pays as payment.
+    -->
+    
+<UserControl x:Class="PointOfSale.CollectCashFromCustomerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Height="455" Margin="20,0,5,0" BorderThickness="1" BorderBrush="Black">
+            <StackPanel VerticalAlignment="Top">
+                <local:CoinPaymentControl Height="35" CoinType="Penny" CoinCount="{Binding Path=UserPennies}"/>
+                <local:CoinPaymentControl Height="35" CoinType="Nickel" CoinCount="{Binding Path=UserNickels}"/>
+                <local:CoinPaymentControl Height="35" CoinType="Dime" CoinCount="{Binding Path=UserDimes}"/>
+                <local:CoinPaymentControl Height="35" CoinType="Quarter" CoinCount="{Binding Path=UserQuarters}"/>
+                <local:CoinPaymentControl Height="35" CoinType="HalfDollar" CoinCount="{Binding Path=UserHalfDollars}"/>
+                <local:CoinPaymentControl Height="35" CoinType="Dollar" CoinCount="{Binding Path=UserDollars}"/>
+                <local:BillPaymentControl Height="35" BillType="One" BillCount="{Binding Path=UserOnes}"/>
+                <local:BillPaymentControl Height="35" BillType="Two" BillCount="{Binding Path=UserTwos}"/>
+                <local:BillPaymentControl Height="35" BillType="Five" BillCount="{Binding Path=UserFives}"/>
+                <local:BillPaymentControl Height="35" BillType="Ten" BillCount="{Binding Path=UserTens}"/>
+                <local:BillPaymentControl Height="35" BillType="Twenty" BillCount="{Binding Path=UserTwenties}"/>
+                <local:BillPaymentControl Height="35" BillType="Fifty" BillCount="{Binding Path=UserFifties}"/>
+                <local:BillPaymentControl Height="35" BillType="Hundred" BillCount="{Binding Path=UserHundreds}"/>
+            </StackPanel>
+        </Border>
+
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="Charge:" Margin="20,20,20,10" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Red" FontSize="30"/>
+            <TextBlock Text="{Binding Path=OrderCharge, StringFormat=c}" Margin="20,10,20,15" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Red" FontSize="30"/>
+            <TextBlock Text="Payment" Margin="20,15,20,10" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGreen" FontSize="30"/>
+            <TextBlock Text="{Binding Path=OrderPayment, StringFormat=c}" Margin="20,10,20,20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGreen" FontSize="30"/>
+            
+            <Button Content="{Binding Path=SufficientFundsIndicator}" FontSize="20" Click="OnNextStep" Margin="20,20,20,10" Height="70" Width="250" VerticalAlignment="Center" HorizontalAlignment="Center" Background="{Binding Path=SufficientFundsColor}" Foreground="White"/>
+            <Button Content="Back" FontSize="30" Click="OnBackStep" Margin="20,10,20,20" Height="70" Width="250" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Red" Foreground="White"/>
+            <TextBlock Name="SufficentPaymentIndicator" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -40,11 +40,11 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Flavor:" Grid.Row="0" Background="LightGreen"/>
-                <RadioButton Content="Cream Soda" GroupName="JerkedSodaFlavor" Grid.Row="1" Click="JerkedSodaFlavorSelect"/>
-                <RadioButton Content="Orange Soda" GroupName="JerkedSodaFlavor" Grid.Row="2" Click="JerkedSodaFlavorSelect"/>
-                <RadioButton Content="Sarsaparilla" GroupName="JerkedSodaFlavor" Grid.Row="3" Click="JerkedSodaFlavorSelect"/>
-                <RadioButton Content="Birch Beer" GroupName="JerkedSodaFlavor" Grid.Row="4" Click="JerkedSodaFlavorSelect"/>
-                <RadioButton Content="Root Beer" GroupName="JerkedSodaFlavor" Grid.Row="5" Click="JerkedSodaFlavorSelect"/>
+                <RadioButton Name="FlavorCreamSoda" Content="Cream Soda" GroupName="JerkedSodaFlavor" Grid.Row="1" Click="JerkedSodaFlavorSelect"/>
+                <RadioButton Name="FlavorOrangeSoda" Content="Orange Soda" GroupName="JerkedSodaFlavor" Grid.Row="2" Click="JerkedSodaFlavorSelect"/>
+                <RadioButton Name="FlavorSarsaparilla" Content="Sarsaparilla" GroupName="JerkedSodaFlavor" Grid.Row="3" Click="JerkedSodaFlavorSelect"/>
+                <RadioButton Name="FlavorBirchBeer" Content="Birch Beer" GroupName="JerkedSodaFlavor" Grid.Row="4" Click="JerkedSodaFlavorSelect"/>
+                <RadioButton Name="FlavorRootBeer" Content="Root Beer" GroupName="JerkedSodaFlavor" Grid.Row="5" Click="JerkedSodaFlavorSelect"/>
                 
             </Grid>
             <Grid>
@@ -55,9 +55,9 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Size:" Grid.Row="0" Background="LightGreen"/>
-                <RadioButton Content="Large" GroupName="JerkedSodaSize" Grid.Row="1" Click="JerkedSodaSizeSelect"/>
-                <RadioButton Content="Medium" GroupName="JerkedSodaSize" Grid.Row="2" Click="JerkedSodaSizeSelect"/>
-                <RadioButton Content="Small" GroupName="JerkedSodaSize" Grid.Row="3" Click="JerkedSodaSizeSelect"/>
+                <RadioButton Name="SizeLarge" Content="Large" GroupName="JerkedSodaSize" Grid.Row="1" Click="JerkedSodaSizeSelect"/>
+                <RadioButton Name="SizeMedium" Content="Medium" GroupName="JerkedSodaSize" Grid.Row="2" Click="JerkedSodaSizeSelect"/>
+                <RadioButton Name="SizeSmall" Content="Small" GroupName="JerkedSodaSize" Grid.Row="3" Click="JerkedSodaSizeSelect"/>
 
             </Grid>
             <Grid>

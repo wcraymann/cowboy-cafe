@@ -1,0 +1,66 @@
+﻿<!---
+    Author: William Raymann.
+    Class: OrderTransactionControl.
+    Purpose: A WPF control to control how orders are processed in the Cowboy Cafe.
+    -->
+    
+<UserControl x:Class="PointOfSale.OrderTransactionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.LayoutTransform>
+            <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+        </Grid.LayoutTransform>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border Name="TransactionConditionBorder" Grid.Row="0" Grid.ColumnSpan="3" BorderBrush="LightGreen" BorderThickness="2">
+            <TextBlock Name="TransactionCondition" Text="Transaction Pending" Margin="5,5,5,5" FontSize="20" Foreground="LightGreen"/>
+        </Border>
+
+        <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Center">
+            <TextBlock Name="OrderHeader" Margin="0,0,10,10"/>
+            <TextBlock Name="OrderSubtotal" Margin="0,10,10,10"/>
+            <TextBlock Name="OrderTax" Margin="0,10,10,10"/>
+            <TextBlock Name="OrderTotal" Margin="0,30,10,0" Foreground="Red"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Center">
+            <TextBlock Text="Order Items" Margin="10,10,10,5"/>
+            <ListView HorizontalContentAlignment="Stretch" ItemsSource="{Binding Path=Items}" Height="200" Margin="10,10,10,5">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="{Binding}" TextAlignment="Left" HorizontalAlignment="Left" Grid.Column="0"/>
+                            <TextBlock Text="{Binding Path=Price, StringFormat=c}" TextAlignment="Right" HorizontalAlignment="Right" Grid.Column="1"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.Row="1" VerticalAlignment="Center">
+            <Button Content="Payment By Credit" Click="OnPaymentByCredit" Background="Gold" Margin="10,20,0,20" Height="30" Width="120"/>
+            <Button Content="Payment By Cash" Click="OnPaymentByCash" Background="LightGreen" Margin="10,20,0,20" Height="30" Width="120"/>
+            <Button Content="Cancel Transaction" Click="OnCancelTransaction" Background="Red" Foreground="White" Margin="10,20,0,20" Height="30" Width="120"/>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

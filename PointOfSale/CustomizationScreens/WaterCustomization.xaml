@@ -38,9 +38,9 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Size:" Background="LightGreen" Grid.Row="0"/>
-                <RadioButton Content="Large" GroupName="WaterSize" Click="WaterSizeSelect" Grid.Row="1"/>
-                <RadioButton Content="Medium" GroupName="WaterSize" Click="WaterSizeSelect" Grid.Row="2"/>
-                <RadioButton Content="Small" GroupName="WaterSize" Click="WaterSizeSelect" Grid.Row="3"/>
+                <RadioButton Name="SizeLarge" Content="Large" GroupName="WaterSize" Click="WaterSizeSelect" Grid.Row="1"/>
+                <RadioButton Name="SizeMedium" Content="Medium" GroupName="WaterSize" Click="WaterSizeSelect" Grid.Row="2"/>
+                <RadioButton Name="SizeSmall" Content="Small" GroupName="WaterSize" Click="WaterSizeSelect" Grid.Row="3"/>
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>

@@ -55,6 +55,7 @@ namespace CowboyCafe.Data
             }
         }
 
+        private uint orderNumber;
         /// <summary>
         /// Increments static lastOrderNumber and returns its value.
         /// </summary>
@@ -62,9 +63,16 @@ namespace CowboyCafe.Data
         {
             get
             {
-                lastOrderNumber++;
-                return lastOrderNumber;
+                return orderNumber;
             }
+        }
+
+        /// <summary>
+        /// Creates as class that represents and Order in the Cowboy Cafe.
+        /// </summary>
+        public Order()
+        {
+            orderNumber = ++lastOrderNumber;
         }
 
         /// <summary>
