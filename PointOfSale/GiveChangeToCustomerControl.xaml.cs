@@ -80,13 +80,13 @@ namespace PointOfSale
                     switch (moneyInfo[1])
                     {
                         case "Hundred":
-                            (DataContext as ModelViewCashRegister).CashDrawer.RemoveBill(Bills.Hundred, Int32.Parse(moneyInfo[0]));
+                            (DataContext as ModelViewCashRegister).RemoveBill(Bills.Hundred, Int32.Parse(moneyInfo[0]));
                             break;
                         case "Fifty":
-                            (DataContext as ModelViewCashRegister).CashDrawer.RemoveBill(Bills.Fifty, Int32.Parse(moneyInfo[0]));
+                            (DataContext as ModelViewCashRegister).RemoveBill(Bills.Fifty, Int32.Parse(moneyInfo[0]));
                             break;
                         case "Twenty":
-                            (DataContext as ModelViewCashRegister).CashDrawer.RemoveBill(Bills.Twenty, Int32.Parse(moneyInfo[0]));
+                            (DataContext as ModelViewCashRegister).RemoveBill(Bills.Twenty, Int32.Parse(moneyInfo[0]));
                             break;
                         case "Ten":
                             (DataContext as ModelViewCashRegister).RemoveBill(Bills.Ten, Int32.Parse(moneyInfo[0]));
