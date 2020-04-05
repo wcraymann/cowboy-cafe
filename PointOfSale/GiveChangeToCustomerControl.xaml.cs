@@ -155,7 +155,7 @@ string asciiArt = "              /\\    /\\ \n" +
                 {
                     do
                     {
-                        orderList += "    " + orderItems.Current.ToString() + "\n";
+                        orderList += orderItems.Current.Price.ToString("C") + " " + orderItems.Current.ToString() + "\n";
 
                         // Check to see if there are any special instruction to add.
                         if (orderItems.Current.SpecialInstructions.Count != 0)
