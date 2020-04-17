@@ -1,0 +1,158 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!--
+    Author: William Raymann.
+    Class: Index.
+    Purpose: To display the CowboyCafe menu.
+-->
+
+<style>
+    th{
+        border: 1px solid black;
+        padding: 5%;
+    }
+</style>
+
+<h1>The Cowboy Cafe</h1>
+
+<p>We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. 
+   Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked 
+   sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! 
+    You’ve had a hard ride - so take it easy with us.
+</p>
+
+<hr/>
+
+<h2>Entrees:</h2>
+
+@foreach (IOrderItem item in Menu.Entrees())
+{
+    @if (item is Entree entree)
+    {
+        <div class="menu-item">
+            <h4>@entree.ToString():</h4>
+            <ul>
+                <li>Price: @entree.Price.ToString("C")</li>
+                <li>Calories: @entree.Calories</li>
+            </ul>
+        </div>
+    }
+
+}
+
+<hr/>
+
+<h2>Sides:</h2>
+
+@foreach (IOrderItem item in Menu.Sides())
+{
+    @if (item is Side side)
+    {
+        <div class="menu-item">
+            @if (side is BakedBeans)
+            {
+                <h4>Baked Beans:</h4>
+            }
+            else if (side is ChiliCheeseFries)
+            {
+                <h4>Chili Cheese Fries:</h4>
+            }
+            else if (side is CornDodgers)
+            {
+                <h4>CornDodgers:</h4>
+            }
+            else
+            {
+                <h4>Pan de Campo:</h4>
+            }
+            <ul>
+                @if (true) side.Size = Size.Large;
+                <li>
+                    <h5>Large:</h5>
+                    <ul>
+                        <li>Price: @side.Price.ToString("C")</li>
+                        <li>Calories: @side.Calories</li>
+                    </ul>
+                </li>
+                @if (true) side.Size = Size.Medium;
+                <li>
+                    <h5>Medium:</h5>
+                    <ul>
+                        <li>Price: @side.Price.ToString("C")</li>
+                        <li>Calories: @side.Calories</li>
+                    </ul>
+                </li>
+                @if (true) side.Size = Size.Small;
+                <li>
+                    <h5>Small:</h5>
+                    <ul>
+                        <li>Price: @side.Price.ToString("C")</li>
+                        <li>Calories: @side.Calories</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    }
+
+}
+
+<hr/>
+
+<h2>Drinks:</h2>
+
+@foreach (IOrderItem item in Menu.Drinks())
+{
+    @if (item is Drink drink)
+    {
+        <div class="menu-item">
+            @if (drink is CowboyCoffee)
+            {
+                <h4>Cowboy Coffee:</h4>
+            }
+            else if (drink is JerkedSoda)
+            {
+                <h4>Jerked Soda:</h4>
+            }
+            else if (drink is TexasTea)
+            {
+                <h4>Texas Tea:</h4>
+            }
+            else
+            {
+                <h4>Water:</h4>
+            }
+
+            <ul>
+                @if (true) drink.Size = Size.Large;
+                <li>
+                    <h5>Large:</h5>
+                    <ul>
+                        <li>Price: @drink.Price.ToString("C")</li>
+                        <li>Calories: @drink.Calories</li>
+                    </ul>
+                </li>
+                @if (true) drink.Size = Size.Medium;
+                <li>
+                    <h5>Medium:</h5>
+                    <ul>
+                        <li>Price: @drink.Price.ToString("C")</li>
+                        <li>Calories: @drink.Calories</li>
+                    </ul>
+                </li>
+                @if (true) drink.Size = Size.Small;
+                <li>
+                    <h5>Small:</h5>
+                    <ul>
+                        <li>Price: @drink.Price.ToString("C")</li>
+                        <li>Calories: @drink.Calories</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    }
+
+}
