@@ -27,9 +27,46 @@
 
 <hr/>
 
+<form>
+    
+    <div>
+        <h3>Search With KeyWords</h3>
+        <input type="text" name="Keywords" value="@Model.Keywords" placeholder="Enter Keywords" />
+    </div>
+    
+    <div >
+        <h3>Search By Type</h3>
+        @foreach (String category in @Model.Categories)
+        {
+            <input type="checkbox" name="SearchCategories" value="@category" checked="@Model.SearchCategories.Contains(category)" />
+            @category
+        }
+    </div>
+    
+    <div>
+        <h3>Search By Calories</h3>
+        Calories Between
+        <input type="number" name="MinimumCalories" value="@Model.MinimumCalories" min="0" step="1" placeholder="min" />
+        and
+        <input type="number" name="MaximumCalories" value="@Model.MaximumCalories" min="0" step="1" placeholder="max" />
+    </div>
+    
+    <div>
+        <h3>Search By Price</h3>
+        Prices Between
+        <input type="number" name="MinimumPrice" value="@Model.MinimumPrice" min="0.00" step="0.01" placeholder="min" />
+        and
+        <input type="number" name="MaximumPrice" value="@Model.MaximumPrice" min="0.00" step="0.01" placeholder="max" />
+    </div>
+    
+    <input type="submit" value="Submit" id="menu-search-submit">
+</form>
+
+<hr/>
+
 <h2>Entrees:</h2>
 
-@foreach (IOrderItem item in Menu.Entrees())
+@foreach (IOrderItem item in @Model.MenuItemsToDisplay)
 {
     @if (item is Entree entree)
     {
@@ -48,7 +85,7 @@
 
 <h2>Sides:</h2>
 
-@foreach (IOrderItem item in Menu.Sides())
+@foreach (IOrderItem item in @Model.MenuItemsToDisplay)
 {
     @if (item is Side side)
     {
@@ -69,8 +106,17 @@
             {
                 <h4>Pan de Campo:</h4>
             }
-            <ul>
-                @if (true) side.Size = Size.Large;
+        <ul>
+            @if (true) side.Size = Size.Large;
+            @if (
+             ((side.Calories <= Model.MaximumCalories || Model.MaximumCalories == null)
+             && (side.Calories >= Model.MinimumCalories || Model.MinimumCalories == null)
+             )
+           && ((side.Price <= Model.MaximumPrice || Model.MaximumPrice == null)
+             && (side.Price >= Model.MinimumPrice || Model.MinimumPrice == null)
+             )
+             )
+            {
                 <li>
                     <h5>Large:</h5>
                     <ul>
@@ -78,7 +124,18 @@
                         <li>Calories: @side.Calories</li>
                     </ul>
                 </li>
-                @if (true) side.Size = Size.Medium;
+            }
+
+            @if (true) side.Size = Size.Medium;
+            @if (
+             ((side.Calories <= Model.MaximumCalories || Model.MaximumCalories == null)
+             && (side.Calories >= Model.MinimumCalories || Model.MinimumCalories == null)
+             )
+           && ((side.Price <= Model.MaximumPrice || Model.MaximumPrice == null)
+             && (side.Price >= Model.MinimumPrice || Model.MinimumPrice == null)
+             )
+             )
+            {
                 <li>
                     <h5>Medium:</h5>
                     <ul>
@@ -86,7 +143,18 @@
                         <li>Calories: @side.Calories</li>
                     </ul>
                 </li>
-                @if (true) side.Size = Size.Small;
+            }
+
+            @if (true) side.Size = Size.Small;
+            @if (
+               ((side.Calories <= Model.MaximumCalories || Model.MaximumCalories == null)
+               && (side.Calories >= Model.MinimumCalories || Model.MinimumCalories == null)
+               )
+             && ((side.Price <= Model.MaximumPrice || Model.MaximumPrice == null)
+               && (side.Price >= Model.MinimumPrice || Model.MinimumPrice == null)
+               )
+               )
+            {
                 <li>
                     <h5>Small:</h5>
                     <ul>
@@ -94,7 +162,9 @@
                         <li>Calories: @side.Calories</li>
                     </ul>
                 </li>
-            </ul>
+            }
+
+        </ul>
         </div>
     }
 
@@ -104,7 +174,7 @@
 
 <h2>Drinks:</h2>
 
-@foreach (IOrderItem item in Menu.Drinks())
+@foreach (IOrderItem item in @Model.MenuItemsToDisplay)
 {
     @if (item is Drink drink)
     {
@@ -126,8 +196,17 @@
                 <h4>Water:</h4>
             }
 
-            <ul>
-                @if (true) drink.Size = Size.Large;
+        <ul>
+            @if (true) drink.Size = Size.Large;
+            @if (
+           ((drink.Calories <= Model.MaximumCalories || Model.MaximumCalories == null)
+           && (drink.Calories >= Model.MinimumCalories || Model.MinimumCalories == null)
+           )
+         && ((drink.Price <= Model.MaximumPrice || Model.MaximumPrice == null)
+           && (drink.Price >= Model.MinimumPrice || Model.MinimumPrice == null)
+           )
+           )
+            {
                 <li>
                     <h5>Large:</h5>
                     <ul>
@@ -135,7 +214,18 @@
                         <li>Calories: @drink.Calories</li>
                     </ul>
                 </li>
-                @if (true) drink.Size = Size.Medium;
+            }
+
+            @if (true) drink.Size = Size.Medium;
+            @if (
+           ((drink.Calories <= Model.MaximumCalories || Model.MaximumCalories == null)
+           && (drink.Calories >= Model.MinimumCalories || Model.MinimumCalories == null)
+           )
+         && ((drink.Price <= Model.MaximumPrice || Model.MaximumPrice == null)
+           && (drink.Price >= Model.MinimumPrice || Model.MinimumPrice == null)
+           )
+           )
+            {
                 <li>
                     <h5>Medium:</h5>
                     <ul>
@@ -143,7 +233,18 @@
                         <li>Calories: @drink.Calories</li>
                     </ul>
                 </li>
-                @if (true) drink.Size = Size.Small;
+            }
+
+            @if (true) drink.Size = Size.Small;
+            @if (
+             ((drink.Calories <= Model.MaximumCalories || Model.MaximumCalories == null)
+             && (drink.Calories >= Model.MinimumCalories || Model.MinimumCalories == null)
+             )
+           && ((drink.Price <= Model.MaximumPrice || Model.MaximumPrice == null)
+             && (drink.Price >= Model.MinimumPrice || Model.MinimumPrice == null)
+             )
+             )
+            {
                 <li>
                     <h5>Small:</h5>
                     <ul>
@@ -151,7 +252,9 @@
                         <li>Calories: @drink.Calories</li>
                     </ul>
                 </li>
-            </ul>
+            }
+
+        </ul>
         </div>
     }
 
