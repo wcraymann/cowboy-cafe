@@ -6,49 +6,25 @@ for details on configuring this project to bundle and minify static web assets. 
  * Class: site.
  * Prupose: To style of the Cowboy Cafe website.
 */
-/*
-#menu-search-form {
-    display: grid;
-    grid-template-rows: auto auto auto auto auto;
-    grid-template-columns: auto;
 
+/* Styles the individual menu item columns on the index page. */
+.menu-items {
+    margin: 5%;
 }
 
-#keyword-search {
-    grid-row-start: 1;
-    grid-row-start: 2;
-    grid-column-start: 1;
-    grid-column-end: 2;
+/* Uses flexbox to arrange the menu item columns on the index page. */
+.cowboy-menu {
+    display: flex;
+    flex-direction: row;
 }
 
-#orderitem-type-search {
-    grid-row-start: 1;
-    grid-row-start: 2;
-    grid-column-start: 2;
-    grid-column-end: 3;
+/* For screens 490 px or smaller. */
+@media (max-width: 490px) {
+    .cowboy-menu {
+        flex-direction: column;
+    }
 }
 
-#calorie-search {
-    grid-row-start: 1;
-    grid-row-start: 2;
-    grid-column-start: 3;
-    grid-column-end: 4;
-}
-
-#price-search {
-    grid-row-start: 1;
-    grid-row-start: 2;
-    grid-column-start: 4;
-    grid-column-end: 5;
-}
-
-#menu-search-submit {
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 5;
-    grid-column-end: 6;
-}
-*/
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -117,3 +93,4 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
